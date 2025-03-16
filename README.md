@@ -1,4 +1,3 @@
-![Axia Africa](/axia_africa.png)
 
 # E-commerce Platform
 
@@ -25,52 +24,54 @@ https://ecommerce-api-one-pi.vercel.app/
 
 ### Endpoints
 
-##### User registration and login
+#### User registration and login
 
-#### Register a user
+- Register a user
 
 ```
 POST /api/user/register
 ```
 
-#### Login a user
+- Login a user
 
 ```
 POST /api/user/login
 ```
 
-##### Product catalogue with categories
+#### Product catalogue with categories
+##### Products
 
-#### Create a product(s)
+- Create a product(s)
 
 ```
 POST /api/product
 ```
 
-#### Get all products
+- Get all products
 
 ```
 GET /api/products
 ```
 
-#### Get a product
+- Get a product
 
 ```
 GET /api/product/:id
 ```
 
-#### Update a product
+- Update a product
 
 ```
 PUT /api/product/:id
 ```
 
-#### Delete a product
+- Delete a product
 
-````
+```
 DELETE /api/product/:id
+```
 
-
+##### Catogory 
 
 
 

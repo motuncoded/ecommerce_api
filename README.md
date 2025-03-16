@@ -1,6 +1,6 @@
 ![Axia Africa](/axia_africa.png)
 
-# E-commerce Platform 
+# E-commerce Platform
 
 ### <i>This handles the backend flow for E-commerce application</i>
 
@@ -10,141 +10,77 @@ listings, view orders, and update order statuses.
 
 ## 🚀 Features
 
-
 ➢ **User registration and login**
 ➢ **Product catalogue with categories**
 ➢ **Shopping cart**
 ➢ **Admin specific actions**
-
 
 ## 📚 API Documentation
 
 ### Base URL
 
 ```
-https://api.example.com/v1
+https://ecommerce-api-one-pi.vercel.app/
 ```
 
 ### Endpoints
 
-##### User Authentication
+##### User registration and login
 
 #### Register a user
+
 ```
-POST /register
+POST /api/user/register
 ```
 
 #### Login a user
 
 ```
-POST /login
-```
-#### Create a product
-
-```
-POST /product
+POST /api/user/login
 ```
 
-##### Request Body
+##### Product catalogue with categories
 
-```json
-{
-  "title": "string",
-  "description": "string",
-  "due_date": "YYYY-MM-DD",
-  "priority": "low | medium | high"
-}
-```
-
-##### Response
-
-```json
-{
-  "id": "string",
-  "title": "string",
-  "description": "string",
-  "due_date": "YYYY-MM-DD",
-  "priority": "low | medium | high",
-  "status": "pending | completed",
-  "created_at": "YYYY-MM-DDTHH:MM:SSZ",
-  "updated_at": "YYYY-MM-DDTHH:MM:SSZ"
-}
-```
-
-#### Update a Task
+#### Create a product(s)
 
 ```
-PUT /tasks/{id}
+POST /api/product
 ```
 
-##### Request Body
-
-```json
-{
-  "title": "string",
-  "description": "string",
-  "due_date": "YYYY-MM-DD",
-  "priority": "low | medium | high",
-  "status": "pending | completed"
-}
-```
-
-##### Response
-
-```json
-{
-  "id": "string",
-  "title": "string",
-  "description": "string",
-  "due_date": "YYYY-MM-DD",
-  "priority": "low | medium | high",
-  "status": "pending | completed",
-  "created_at": "YYYY-MM-DDTHH:MM:SSZ",
-  "updated_at": "YYYY-MM-DDTHH:MM:SSZ"
-}
-```
-
-#### Delete a Task
+#### Get all products
 
 ```
-DELETE /tasks/{id}
+GET /api/products
 ```
 
-##### Response
-
-```json
-{
-  "message": "Task deleted successfully"
-}
-```
-
-#### List Tasks
+#### Get a product
 
 ```
-GET /tasks
+GET /api/product/:id
 ```
 
-##### Query Parameters
+#### Update a product
 
-- `status` (optional): Filter tasks by status (`pending` or `completed`)
-- `priority` (optional): Filter tasks by priority (`low`, `medium`, `high`)
-
-##### Response
-
-```json
-[
-  {
-    "id": "string",
-    "title": "string",
-    "description": "string",
-    "due_date": "YYYY-MM-DD",
-    "priority": "low | medium | high",
-    "status": "pending | completed",
-    "created_at": "YYYY-MM-DDTHH:MM:SSZ",
-    "updated_at": "YYYY-MM-DDTHH:MM:SSZ"
-  }
-]
 ```
+PUT /api/product/:id
+```
+
+#### Delete a product
+
+````
+DELETE /api/product/:id
+
+
+
+
+
+
+## 🔧 Tech Stack
+Backend: Node.js (Express.js)
+Database: PostgreSQL
+Authentication: JWT
+Security:  CORS
+API Testing: Postman
 
 ## 🛠️ Setup & Installation
 
@@ -152,7 +88,7 @@ GET /tasks
 
 ```sh
 git clone https://github.com/motuncoded/ecommerce_api.git
-```
+````
 
 2. Navigate to the project directory:
 
@@ -170,6 +106,12 @@ npm install
 
    - Create a `.env` file in the root directory.
    - Add necessary environment variables (e.g., database connection strings).
+
+```sh
+PORT=5000
+MONGODB=your_mongodb_url
+JWT_SECRET=your_secret_key
+```
 
 5. Start the server:
 

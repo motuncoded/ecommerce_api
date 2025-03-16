@@ -1,6 +1,5 @@
 // Error middleware function
 
-
 const err = (err, req, res, next) => {
   const status = err.status || 500;
   const message = err.status || "Internal server error";

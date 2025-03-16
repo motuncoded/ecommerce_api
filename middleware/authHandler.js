@@ -21,9 +21,7 @@ const authHandler = async (req, res, next) => {
     //   Finding the User in the Database
     const user = await userModel.findById(decodedToken.id).select("-password"); //to find a userid that matches the token id
     if (!user) {
-      return res
-        .status(401)
-        .json({ msg: "User not found. Please register" });
+      return res.status(401).json({ msg: "User not found. Please register" });
     }
     //    Attaching the Verified User to req
     req.user = user; //passing the verified user to the ongoing request

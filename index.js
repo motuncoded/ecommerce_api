@@ -5,6 +5,7 @@ const categoryRouter = require("./routes/categoryRouter");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const connectdb = require("./config/dbController");
+const cartRouter = require("./routes/cartRouter");
 const app = express();
 
 // Load environment variables
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 app.use("/api", userRouter);
 app.use("/api", productRouter);
 app.use("/api", categoryRouter);
+app.use("/api", cartRouter);
 
 const port = process.env.PORT;
 

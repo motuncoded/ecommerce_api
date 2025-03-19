@@ -31,7 +31,7 @@ const add_item_to_cart = async (req, res) => {
 };
 
 // Remove item from cart
-exports.removeItemFromCart = async (req, res) => {
+const remove_item_from_cart = async (req, res) => {
   const { productId } = req.body;
   const userId = req.user._id;
 
@@ -54,7 +54,7 @@ exports.removeItemFromCart = async (req, res) => {
 };
 
 // View cart
-exports.viewCart = async (req, res) => {
+const view_cart = async (req, res) => {
   const userId = req.user._id;
 
   try {
@@ -72,4 +72,8 @@ exports.viewCart = async (req, res) => {
   }
 };
 
-module.exports = mongoose.model("cart", cartModel);
+module.exports = {
+  add_item_to_cart,
+  remove_item_from_cart,
+  view_cart
+}

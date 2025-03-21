@@ -1,4 +1,3 @@
-
 # E-commerce Platform
 
 ### <i>This handles the backend flow for E-commerce application</i>
@@ -39,6 +38,7 @@ POST /api/user/login
 ```
 
 #### Product catalogue with categories
+
 ##### Products
 
 - Create a product(s)
@@ -71,16 +71,14 @@ PUT /api/product/:id
 DELETE /api/product/:id
 ```
 
-##### Catogory 
-
-
-
+##### Catogory
 
 ## 🔧 Tech Stack
+
 Backend: Node.js (Express.js)
 Database: PostgreSQL
 Authentication: JWT
-Security:  CORS
+Security: CORS
 API Testing: Postman
 
 ## 🛠️ Setup & Installation
@@ -89,7 +87,7 @@ API Testing: Postman
 
 ```sh
 git clone https://github.com/motuncoded/ecommerce_api.git
-````
+```
 
 2. Navigate to the project directory:
 

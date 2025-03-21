@@ -12,10 +12,10 @@ const {
 
 const categoryRouter = express
   .Router()
-  .post("/products", create_a_category)
-  .get("/products", get_all_categories)
-  .get("/product/:id", get_a_category)
-  .put("/product/:id", update_a_category)
-  .delete("/product/:id", delete_a_category);
+  .post("/category", create_a_category)
+  .get("/categories", get_all_categories)
+  .get("/category/:id", get_a_category)
+  .put("/category/:id", update_a_category)
+  .delete("/category/:id", delete_a_category);
 
 module.exports = categoryRouter;

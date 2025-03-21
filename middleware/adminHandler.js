@@ -24,14 +24,14 @@ const authHandler = async (req, res, next) => {
       return res.status(401).json({ msg: "User not found. Please register" });
     }
     //    Attaching the Verified User to req
-      req.user = user;
-    
-     if (req.user && req.user.isAdmin) {
-        next();
-      } else {
-        res.status(403).json({ error: 'Not authorized as an admin' });
-      }
-    } catch (error) {
+    req.user = user;
+
+    if (req.user && req.user.isAdmin) {
+      next();
+    } else {
+      res.status(403).json({ error: "Not authorized as an admin" });
+    }
+  } catch (error) {
     //Error Handling
     console.error("Authentication Error:", error);
 

@@ -75,5 +75,5 @@ const view_cart = async (req, res) => {
 module.exports = {
   add_item_to_cart,
   remove_item_from_cart,
-  view_cart
-}
+  view_cart,
+};

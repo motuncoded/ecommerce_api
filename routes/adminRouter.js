@@ -2,34 +2,36 @@ const express = require("express");
 
 const adminHandler = require("../middleware/adminHandler");
 const {
-  createProduct,
-  getProducts,
-  getProductById,
-  updateProduct,
-  deleteProduct,
+  create_a_product,
+  get_all_products,
+  get_a_product,
+  update_a_product,
+  delete_a_product,
 } = require("../controllers/productController");
 const {
-  createCategory,
-  getCategories,
-  getCategoryById,
-  updateCategory,
-  deleteCategory,
+  create_a_category,
+  get_all_categories,
+  get_a_category,
+  update_a_category,
+  delete_a_category,
 } = require("../controllers/categoryController");
 
 const adminRouter = express
   .Router()
   // Product routes
-  .post("/products", adminHandler, createProduct)
-  .get("/products", adminHandler, getProducts)
-  .get("/products/:id", adminHandler, getProductById)
-  .put("/products/:id", adminHandler, updateProduct)
-  .delete("/products/:id", adminHandler, deleteProduct)
+
+   .post("/product",adminHandler, create_a_product)
+    .get("/products",adminHandler, get_all_products)
+    .get("/product/:id",adminHandler, get_a_product)
+    .put("/product/:id",adminHandler, update_a_product)
+    .delete("/product/:id",adminHandler, delete_a_product)
+ 
 
   // Category routes
-  .post("/categories", adminHandler, createCategory)
-  .get("/categories", adminHandler, getCategories)
-  .get("/categories/:id", adminHandler, getCategoryById)
-  .put("/categories/:id", adminHandler, updateCategory)
-  .delete("/categories/:id", adminHandler, deleteCategory);
+  .post("/category",adminHandler, create_a_category)
+  .get("/categories",adminHandler, get_all_categories)
+  .get("/category/:id",adminHandler, get_a_category)
+  .put("/category/:id",adminHandler, update_a_category)
+  .delete("/category/:id",adminHandler, delete_a_category);
 
 module.exports = adminRouter;

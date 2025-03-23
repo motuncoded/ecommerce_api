@@ -21,8 +21,8 @@ const get_orders = async (req, res, next) => {
 };
 
 // Update order status
-const update_order_status = async (req, res) => {
-  const { id } = req.params.id;
+const update_order_status = async (req, res,next) => {
+  const { id } = req.params;
   try {
     const order = await orderModel.findById(id);
 

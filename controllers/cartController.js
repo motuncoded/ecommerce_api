@@ -2,7 +2,7 @@ const cartModel = require("../models/cartModel");
 const productModel = require("../models/productModel");
 
 // Add item to cart
-const add_item_to_cart = async (req, res) => {
+const add_item_to_cart = async (req, res, next) => {
   const { productId, quantity } = req.body;
   const userId = req.user._id;
 
@@ -24,14 +24,16 @@ const add_item_to_cart = async (req, res) => {
     }
 
     await cart.save();
-    res.status(201).json(cart);
+    res
+      .status(201)
+      .json({ cart, message: "Item added to cart successfully" });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+ next(error)
   }
 };
 
 // Remove item from cart
-const remove_item_from_cart = async (req, res) => {
+const remove_item_from_cart = async (req, res,next) => {
   const { productId } = req.body;
   const userId = req.user._id;
 
@@ -47,14 +49,14 @@ const remove_item_from_cart = async (req, res) => {
     );
 
     await cart.save();
-    res.json(cart);
+    res.status(200).json({ cart, message:"Item removed from cart successfully" });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+next(error)
   }
 };
 
 // View cart
-const view_cart = async (req, res) => {
+const view_cart = async (req, res, next) => {
   const userId = req.user._id;
 
   try {
@@ -63,12 +65,12 @@ const view_cart = async (req, res) => {
       .populate("products.product");
 
     if (!cart) {
-      return res.status(404).json({ error: "Cart not found" });
+      return res.status(404).json({ message: "Cart not found" });
     }
 
     res.json(cart);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+next(error)
   }
 };
 

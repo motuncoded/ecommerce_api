@@ -6,6 +6,8 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const connectdb = require("./config/dbController");
 const cartRouter = require("./routes/cartRouter");
+const orderRouter = require("./routes/orderRouter");
+const adminRouter = require("./routes/adminRouter");
 const app = express();
 
 // Load environment variables
@@ -26,6 +28,8 @@ app.use("/api", userRouter);
 app.use("/api", productRouter);
 app.use("/api", categoryRouter);
 app.use("/api", cartRouter);
+app.use("/api", orderRouter);
+app.use("/api", adminRouter);
 
 const port = process.env.PORT;
 

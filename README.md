@@ -45,31 +45,32 @@ Login users that want to check out products. This end points provides login deta
 
 ##### Products
 
+
+- **Create a product(s)**
+Creates a new product for users
 ```
 POST /api/product
 ```
-- Create a product(s)
-Creates a new product for users
 
-- Get all products
+- **Get all products**
 Retrieves a list of all products
 ```
 GET /api/products
 ```
 
-- Get a product
+- **Get a product**
 Retrieves a product
 ```
 GET /api/product/:id
 ```
 
-- Update a product
+- **Update a product**
 Upadate a product
 ```
 PUT /api/product/:id
 ```
 
-- Delete a product
+- **Delete a product**
 Delete a product 
 ```
 DELETE /api/product/:id
@@ -77,7 +78,35 @@ DELETE /api/product/:id
 
 ##### Catogory
 
+- **Create a category(s)**
+Creates a category for product 
+```
+POST /api/category
+```
 
+- **Get all categories**
+Retrieves a list of all categories 
+```
+GET /api/categories 
+```
+
+- **Get a category**
+Retrieves a category
+```
+GET /api/category/:id
+```
+
+- **Update a category**
+Upadate a category
+```
+PUT /api/category/:id
+```
+
+- **Delete a category**
+Delete a category 
+```
+DELETE /api/category/:id
+```
 ## 🔧 Tech Stack
 
 Backend: Node.js (Express.js)

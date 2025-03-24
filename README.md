@@ -48,34 +48,35 @@ Login users that want to check out products. This end points provides login deta
 ```
 POST /api/product
 ```
-
 - Create a product(s)
+Creates a new product for users
 
 - Get all products
-
+Retrieves a list of all products
 ```
 GET /api/products
 ```
 
 - Get a product
-
+Retrieves a product
 ```
 GET /api/product/:id
 ```
 
 - Update a product
-
+Upadate a product
 ```
 PUT /api/product/:id
 ```
 
 - Delete a product
-
+Delete a product 
 ```
 DELETE /api/product/:id
 ```
 
 ##### Catogory
+
 
 ## 🔧 Tech Stack
 

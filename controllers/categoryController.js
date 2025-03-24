@@ -45,7 +45,7 @@ const get_a_category = async (req, res, next) => {
 };
 
 // Update a category by ID
-const update_a_category = async (req, res,next) => {
+const update_a_category = async (req, res, next) => {
   const { id } = req.params;
 
   try {

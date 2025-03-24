@@ -28,27 +28,28 @@ https://ecommerce-api-one-pi.vercel.app/
 ```
 POST /api/user/register
 ```
+
 - Register a user
 
 Register users that want to check out products. This end points provides full details for each user
 
-
 ```
 POST /api/user/login
 ```
+
 - Login a user
 
-
+Login users that want to check out products. This end points provides login details for each user
 
 #### Product catalogue with categories
 
 ##### Products
 
-- Create a product(s)
-
 ```
 POST /api/product
 ```
+
+- Create a product(s)
 
 - Get all products
 

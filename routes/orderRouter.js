@@ -1,13 +1,11 @@
 // Order Router Middlerware
 
-
 const express = require("express");
 const adminHandler = require("../middleware/adminHandler");
 const {
   get_orders,
   update_order_status,
 } = require("../controllers/orderController");
-
 
 const orderRouter = express
   .Router()

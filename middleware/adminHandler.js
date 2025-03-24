@@ -23,7 +23,7 @@ const adminHandler = async (req, res, next) => {
     if (!user) {
       return res
         .status(401)
-        .json({ message: "User not found. Please register" });
+        .json({ message: "User not found. Please register or login" });
     }
     //    Attaching the Verified User to req
     req.user = user;
@@ -35,7 +35,7 @@ const adminHandler = async (req, res, next) => {
     }
   } catch (error) {
     //Error Handling
-  next(error)
+    next(error);
 
     if (error.name === "TokenExpiredError") {
       return res

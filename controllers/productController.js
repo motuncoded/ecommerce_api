@@ -103,7 +103,7 @@ const update_a_product = async (req, res, next) => {
 };
 
 // Delete a product
-const delete_a_product = async (req, res,next) => {
+const delete_a_product = async (req, res, next) => {
   const { id } = req.params;
   try {
     const deleteProduct = await productModel.findByIdAndDelete(id);

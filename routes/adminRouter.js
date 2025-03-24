@@ -20,18 +20,17 @@ const adminRouter = express
   .Router()
   // Product routes
 
-   .post("/product",adminHandler, create_a_product)
-    .get("/products",adminHandler, get_all_products)
-    .get("/product/:id",adminHandler, get_a_product)
-    .put("/product/:id",adminHandler, update_a_product)
-    .delete("/product/:id",adminHandler, delete_a_product)
- 
+  .post("/product", adminHandler, create_a_product)
+  .get("/products", adminHandler, get_all_products)
+  .get("/product/:id", adminHandler, get_a_product)
+  .put("/product/:id", adminHandler, update_a_product)
+  .delete("/product/:id", adminHandler, delete_a_product)
 
   // Category routes
-  .post("/category",adminHandler, create_a_category)
-  .get("/categories",adminHandler, get_all_categories)
-  .get("/category/:id",adminHandler, get_a_category)
-  .put("/category/:id",adminHandler, update_a_category)
-  .delete("/category/:id",adminHandler, delete_a_category);
+  .post("/category", adminHandler, create_a_category)
+  .get("/categories", adminHandler, get_all_categories)
+  .get("/category/:id", adminHandler, get_a_category)
+  .put("/category/:id", adminHandler, update_a_category)
+  .delete("/category/:id", adminHandler, delete_a_category);
 
 module.exports = adminRouter;

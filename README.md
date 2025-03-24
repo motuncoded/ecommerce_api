@@ -29,7 +29,7 @@ https://ecommerce-api-one-pi.vercel.app/
 POST /api/user/register
 ```
 
-- Register a user
+- **Register a user**
 
 Register users that want to check out products. This end points provides full details for each user
 
@@ -37,7 +37,7 @@ Register users that want to check out products. This end points provides full de
 POST /api/user/login
 ```
 
-- Login a user
+- **Login a user**
 
 Login users that want to check out products. This end points provides login details for each user
 
@@ -47,30 +47,35 @@ Login users that want to check out products. This end points provides login deta
 
 
 - **Create a product(s)**
+  
 Creates a new product for users
 ```
 POST /api/product
 ```
 
 - **Get all products**
+  
 Retrieves a list of all products
 ```
 GET /api/products
 ```
 
 - **Get a product**
+  
 Retrieves a product
 ```
 GET /api/product/:id
 ```
 
 - **Update a product**
+  
 Upadate a product
 ```
 PUT /api/product/:id
 ```
 
 - **Delete a product**
+  
 Delete a product 
 ```
 DELETE /api/product/:id
@@ -79,34 +84,44 @@ DELETE /api/product/:id
 ##### Catogory
 
 - **Create a category(s)**
+  
 Creates a category for product 
 ```
 POST /api/category
 ```
 
 - **Get all categories**
+  
 Retrieves a list of all categories 
 ```
 GET /api/categories 
 ```
 
 - **Get a category**
+  
 Retrieves a category
 ```
 GET /api/category/:id
 ```
 
 - **Update a category**
+  
 Upadate a category
 ```
 PUT /api/category/:id
 ```
 
 - **Delete a category**
+  
 Delete a category 
 ```
 DELETE /api/category/:id
 ```
+
+#### Shopping cart
+
+#### Admin spcific actions
+
 ## 🔧 Tech Stack
 
 Backend: Node.js (Express.js)

@@ -6,7 +6,8 @@ const categoryModel = require("../models/categoryModel");
 // Create a product
 const create_a_product = async (req, res, next) => {
   try {
-    const { name, description, price, quantity, category, imageUrl } = req.body;
+    const { name, description, price, quantity, category, stock, imageUrl } =
+      req.body;
 
     // Check if category exists, if not, create it
     let categoryDoc = await categoryModel.findOne({ name: category });
@@ -22,6 +23,7 @@ const create_a_product = async (req, res, next) => {
       quantity,
       category: categoryDoc._id,
       imageUrl,
+      stock,
     });
     await createProduct.save();
     res
@@ -64,7 +66,8 @@ const get_a_product = async (req, res, next) => {
 // Update a product by ID
 const update_a_product = async (req, res, next) => {
   const { id } = req.params;
-  const { name, description, price, quantity, category, imageUrl } = req.body;
+  const { name, description, price, quantity, category, imageUrl, stock } =
+    req.body;
 
   try {
     // Check if category exists, if not, create it

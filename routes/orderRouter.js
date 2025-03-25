@@ -1,15 +1,17 @@
 // Order Router Middlerware
 
 const express = require("express");
-const adminHandler = require("../middleware/adminHandler");
+const authHandler = require("../middleware/authHandler");
 const {
+  create_order,
   get_orders,
-  update_order_status,
+  get_order_by_id,
 } = require("../controllers/orderController");
 
 const orderRouter = express
   .Router()
-  .get("/orders", adminHandler, get_orders)
-  .put("/order/:id", adminHandler, update_order_status);
+  .post("/order", authHandler, create_order)
+  .get("/order", authHandler, get_orders)
+  .get("/order/:id", authHandler, get_order_by_id);
 
 module.exports = orderRouter;

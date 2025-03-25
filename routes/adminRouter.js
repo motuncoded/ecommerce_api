@@ -16,6 +16,11 @@ const {
   delete_a_category,
 } = require("../controllers/categoryController");
 
+const {
+  get_orders,
+  update_order_status,
+} = require("../controllers/orderController");
+
 const adminRouter = express
   .Router()
   // Product routes
@@ -31,6 +36,9 @@ const adminRouter = express
   .get("/categories", adminHandler, get_all_categories)
   .get("/category/:id", adminHandler, get_a_category)
   .put("/category/:id", adminHandler, update_a_category)
-  .delete("/category/:id", adminHandler, delete_a_category);
+  .delete("/category/:id", adminHandler, delete_a_category)
+
+  .get("/orders", adminHandler, get_orders)
+  .put("/order/:id/status", adminHandler, update_order_status);
 
 module.exports = adminRouter;

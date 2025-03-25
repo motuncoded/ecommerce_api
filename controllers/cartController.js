@@ -121,11 +121,13 @@ const view_cart = async (req, res, next) => {
       .populate("products.product");
 
     if (!cart) {
-      return res.status(404).json({ message: "Cart not found" });
+      return res
+        .status(404)
+        .json({ message: "Cart not found, please add items to the cart" });
     }
     // Calculate the total amount
     const totalAmount = cart.products.reduce((total, item) => {
-      return total + item.product.price * item.quantity;
+      return total + item.product.totalPrice;
     }, 0);
 
     res

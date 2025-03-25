@@ -25,21 +25,29 @@ https://ecommerce-api-one-pi.vercel.app/
 
 #### User registration and login
 
+- **Register a user**
+
 ```
 POST /api/user/register
 ```
 
-- **Register a user**
-
 Register users that want to check out products. This end points provides full details for each user
+
+- **Login a user**
 
 ```
 POST /api/user/login
 ```
 
-- **Login a user**
+Login users that want to check out products.
 
-Login users that want to check out products. This end points provides login details for each user
+- **Logout a user**
+
+```
+POST /api/user/logout
+```
+
+Login users are allowed to logout of the .
 
 #### Product catalogue with categories
 
@@ -85,7 +93,7 @@ Delete a product
 DELETE /api/product/:id
 ```
 
-##### Catogory
+##### Category
 
 - **Create a category(s)**
 
@@ -128,6 +136,7 @@ DELETE /api/category/:id
 ```
 
 #### Shopping cart
+
 This feature manage the items present in the cart referencing the product and the usee whose items are present.
 
 - **Create an item the cart**
@@ -135,7 +144,7 @@ This feature manage the items present in the cart referencing the product and th
 This initiate the cart with items created by the user
 
 ```
-POST /api/add 
+POST /api/add
 ```
 
 - **Remove an item in the cart**
@@ -147,31 +156,72 @@ DELETE /api/remove
 ```
 
 - **View cart**
-This shows all items present in the cart
+  This shows all items present in the cart
 
 ```
 GET /api/carts
 ```
 
 - **Clear cart**
-This clears all items present in the cart
+  This clears all items present in the cart
 
 ```
 DELETE /api/clear
 ```
 
 - **Update the cart**
-This update the items present in the cart
+  This update the items present in the cart
 
 ```
 PUT /api/update
 ```
+
 #### Admin spcific actions
+
 This applies to users who has the admin role to manage product
 listings, view orders, and update order statuses.
 
+##### Product Management
 
+- **Create a product**
+- **Get all products**
+- **Get a product**
+- **Update a product**
+- **Delete a product**
 
+##### Category Management
+
+- **Create a category**
+- **Get all categories**
+- **Get a category**
+- **Update a category**
+- **Delete a category**
+
+##### Order Management
+
+- **Get all orders**
+
+Retrieves a list of all orders.
+
+```
+GET /api/orders
+```
+
+- **Update order status**
+
+Updates the status of an order.
+
+```
+PUT /api/order/:id/status
+```
+
+- **Delete an order**
+
+Deletes an order.
+
+```
+DELETE /api/order/:id
+```
 
 ## 🔧 Tech Stack
 

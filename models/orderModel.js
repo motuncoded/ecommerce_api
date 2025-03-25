@@ -13,21 +13,15 @@ const orderModel = new mongoose.Schema({
         ref: "product",
         required: true,
       },
-      quantity: {
-        type: Number,
-        required: true,
-      },
     },
   ],
-  totalPrice: {
-    type: Number,
-    required: true,
-  },
+
   status: {
     type: String,
     enum: ["Pending", "Processing", "Shipped", "Delivered", "Cancelled"],
     default: "Pending",
   },
+
   createdAt: {
     type: Date,
     default: Date.now,

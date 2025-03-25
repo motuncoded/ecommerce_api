@@ -19,6 +19,7 @@ const {
 const {
   get_orders,
   update_order_status,
+  delete_order,
 } = require("../controllers/orderController");
 
 const adminRouter = express
@@ -39,6 +40,7 @@ const adminRouter = express
   .delete("/category/:id", adminHandler, delete_a_category)
 
   .get("/orders", adminHandler, get_orders)
-  .put("/order/:id/status", adminHandler, update_order_status);
+  .put("/order/:id/status", adminHandler, update_order_status)
+  .delete("/order/:id", adminHandler, delete_order);
 
 module.exports = adminRouter;

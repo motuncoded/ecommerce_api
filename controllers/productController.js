@@ -16,6 +16,9 @@ const create_a_product = async (req, res, next) => {
       await categoryDoc.save();
     }
 
+    // Calculate the total price
+    const totalPrice = price * quantity;
+
     const createProduct = new productModel({
       name,
       description,
@@ -24,6 +27,7 @@ const create_a_product = async (req, res, next) => {
       category: categoryDoc._id,
       imageUrl,
       stock,
+      totalPrice, // Include total price
     });
     await createProduct.save();
     res

@@ -3,11 +3,11 @@ const categoryModel = require("../models/categoryModel");
 // Create a new category
 const create_a_category = async (req, res, next) => {
   try {
-    const category = new categoryModel(req.body);
+    const createCategory = new categoryModel(req.body);
     await category.save();
     res
       .status(201)
-      .json({ category, message: "Category created successfully" });
+      .json({ createCategory, message: "Category created successfully" });
   } catch (error) {
     next(error);
   }

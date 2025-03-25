@@ -9,7 +9,7 @@ const add_item_to_cart = async (req, res, next) => {
   try {
     const product = await productModel.findById(productId);
     if (!product) {
-      return res.status(404).json({ error: "Product not found" });
+      return res.status(404).json({ message: "Product not found" });
     }
     let cart = await cartModel.findOne({ user: userId });
 
@@ -89,7 +89,7 @@ const update_cart = async (req, res, next) => {
     let cart = await cartModel.findOne({ user: userId });
 
     if (!cart) {
-      return res.status(404).json({ error: "Cart not found" });
+      return res.status(404).json({ message: "Cart not found" });
     }
 
     const productIndex = cart.products.findIndex(

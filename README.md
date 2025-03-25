@@ -47,7 +47,7 @@ Login users that want to check out products. This end points provides login deta
 
 - **Create a product(s)**
 
-Creates a new product for users
+Creates a new product for user managed by the admin
 
 ```
 POST /api/product
@@ -128,8 +128,50 @@ DELETE /api/category/:id
 ```
 
 #### Shopping cart
+This feature manage the items present in the cart referencing the product and the usee whose items are present.
 
+- **Create an item the cart**
+
+This initiate the cart with items created by the user
+
+```
+POST /api/add 
+```
+
+- **Remove an item in the cart**
+
+This intiate the removal of an item in the cart
+
+```
+DELETE /api/remove
+```
+
+- **View cart**
+This shows all items present in the cart
+
+```
+GET /api/carts
+```
+
+- **Clear cart**
+This clears all items present in the cart
+
+```
+DELETE /api/clear
+```
+
+- **Update the cart**
+This update the items present in the cart
+
+```
+PUT /api/update
+```
 #### Admin spcific actions
+This applies to users who has the admin role to manage product
+listings, view orders, and update order statuses.
+
+
+
 
 ## 🔧 Tech Stack
 

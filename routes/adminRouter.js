@@ -1,6 +1,6 @@
 const express = require("express");
 
-const adminHandler = require("../middleware/adminHandler");
+const { adminHandler } = require("../middleware/authHandler");
 const {
   create_a_product,
   get_all_products,

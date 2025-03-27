@@ -25,6 +25,7 @@ const register = async (req, res, next) => {
   }
 
   try {
+    //check the email validation
     const gmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!gmailRegex.test(gmail)) {
       return res.status(400).json({ message: "Invalid gmail format" });

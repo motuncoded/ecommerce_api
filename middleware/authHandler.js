@@ -3,7 +3,7 @@
 const jwt = require("jsonwebtoken");
 const userModel = require("../models/userModel");
 // Defining authHandler Middleware
-const authHandler = async (req, res, next) => {
+const userHandler = async (req, res, next) => {
   const token = req.cookies.token;
 
   // Checking the Token
@@ -43,5 +43,13 @@ const authHandler = async (req, res, next) => {
       .json({ message: "Server error. Please try again later." });
   }
 };
-
-module.exports = authHandler;
+const adminHandler = async (req, res, next) => {
+  if (req.user && req.user.role === "admin") {
+    next();
+  } else {
+    res
+      .status(403)
+      .json({ message: "Access denied, please register as an admin" });
+  }
+};
+module.exports = { userHandler, adminHandler };

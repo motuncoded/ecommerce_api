@@ -257,7 +257,7 @@ npm install
    - Add necessary environment variables (e.g., database connection strings).
 
 ```sh
-PORT=5000
+PORT=5002
 MONGODB=your_mongodb_url
 JWT_SECRET=your_secret_key
 ```

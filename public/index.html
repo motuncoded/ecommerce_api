@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axia Afria backend project</title>
+</head>
+<body>
+
+    <style>
+        :root {
+  --white: hsl(0, 0%, 100%);
+  --grey: hsl(0, 0%, 20%);
+  --dark-grey: hsl(0, 0%, 12%);
+  --off-black: hsl(0, 0%, 8%);
+  --accent: #800080;
+
+}
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: system-ui, sans-serif, serif;
+  background-color: var(--off-black);
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+img {
+  border-radius: 50%;
+}
+.profile-card {
+  max-width: 375px;
+  width: calc(375px - 1rem);
+  background-color: var(--dark-grey);
+  color: var(--white);
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 1rem;
+}
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+p {
+  font-size: 1rem;
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1rem;
+}
+a {
+  text-decoration: none;
+  text-align: center;
+  color: var(--off-black);
+  background-color: var(--white);
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+}
+a:hover {
+  background-color: var(--accent);
+  color: var(--white);
+  transition: 0.5s ease-in linear;
+}
+.active{
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+    </style>
+     <main>
+      <section class="profile-card">
+        <h1>Axia Africa Projects</h1>
+  <h2>Ecommerce Application API</h2>
+        <div class="buttons">
+          <a href="https://github.com/motuncoded/ecommerce_api" class="active">E commerce Platform API</a>
+          <a href="https://github.com/motuncoded/tasks_api">Blog platform API</a>
+          <a href="https://github.com/motuncoded/blog-api">Task management platform API</a>
+        </div>
+      </section>
+    </main>
+</body>
+</html>

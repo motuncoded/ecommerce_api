@@ -1,6 +1,6 @@
 const express = require("express");
 
-const { adminHandler } = require("../middleware/authHandler");
+const { userHandler, adminHandler } = require("../middleware/authHandler");
 const {
   create_a_product,
   get_all_products,
@@ -24,23 +24,24 @@ const {
 
 const adminRouter = express
   .Router()
-  // Product routes
 
-  .post("/product", adminHandler, create_a_product)
-  .get("/products", adminHandler, get_all_products)
-  .get("/product/:id", adminHandler, get_a_product)
-  .put("/product/:id", adminHandler, update_a_product)
-  .delete("/product/:id", adminHandler, delete_a_product)
+  // Product routes
+  .post("/product", userHandler, adminHandler, create_a_product)
+  .get("/products", userHandler, adminHandler, get_all_products)
+  .get("/product/:id", userHandler, adminHandler, get_a_product)
+  .put("/product/:id", userHandler, adminHandler, update_a_product)
+  .delete("/product/:id", userHandler, adminHandler, delete_a_product)
 
   // Category routes
-  .post("/category", adminHandler, create_a_category)
-  .get("/categories", adminHandler, get_all_categories)
-  .get("/category/:id", adminHandler, get_a_category)
-  .put("/category/:id", adminHandler, update_a_category)
-  .delete("/category/:id", adminHandler, delete_a_category)
+  .post("/category", userHandler, adminHandler, create_a_category)
+  .get("/categories", userHandler, adminHandler, get_all_categories)
+  .get("/category/:id", userHandler, adminHandler, get_a_category)
+  .put("/category/:id", userHandler, adminHandler, update_a_category)
+  .delete("/category/:id", userHandler, adminHandler, delete_a_category)
 
-  .get("/orders", adminHandler, get_orders)
-  .put("/order/:id/status", adminHandler, update_order_status)
-  .delete("/order/:id", adminHandler, delete_order);
+  //Order routes
+  .get("/orders", userHandler, adminHandler, get_orders)
+  .put("/order/:id/status", userHandler, adminHandler, update_order_status)
+  .delete("/order/:id", userHandler, adminHandler, delete_order);
 
 module.exports = adminRouter;

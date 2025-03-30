@@ -18,7 +18,7 @@ listings, view orders, and update order statuses.
 ### Base URL
 
 ```
-https://ecommerce-api-one-pi.vercel.app/
+https://ecommerce-api-one-pi.vercel.app
 ```
 
 ### Endpoints
@@ -27,27 +27,27 @@ https://ecommerce-api-one-pi.vercel.app/
 
 - **Register a user**
 
+Register users that want to check out products. This end points provides full details for each user
+
 ```
 POST /api/user/register
 ```
 
-Register users that want to check out products. This end points provides full details for each user
-
 - **Login a user**
+
+Login users that want to check out products.
 
 ```
 POST /api/user/login
 ```
 
-Login users that want to check out products.
-
 - **Logout a user**
+
+Users are allowed to logout.
 
 ```
 POST /api/user/logout
 ```
-
-Login users are allowed to logout of the .
 
 #### Product catalogue with categories
 

@@ -25,156 +25,49 @@ https://ecommerce-api-one-pi.vercel.app
 
 #### User registration and login
 
-- **Register a user**
+| Endpoint            | Description                                                      | Method |
+|---------------------|------------------------------------------------------------------|--------|
+| /api/user/register  | Register users that want to check out products.                  | POST   |
+| /api/user/login     | Login users that want to check out products.                     | POST   |
+| /api/user/logout    | Users are allowed to logout.                                     | POST   |
 
-Register users that want to check out products. This end points provides full details for each user
-
-```
-POST /api/user/register
-```
-
-- **Login a user**
-
-Login users that want to check out products.
-
-```
-POST /api/user/login
-```
-
-- **Logout a user**
-
-Users are allowed to logout.
-
-```
-POST /api/user/logout
-```
 
 #### Product catalogue with categories
 
 ##### Products
 
-- **Create a product(s)**
 
-Creates a new product for user managed by the admin
-
-```
-POST /api/product
-```
-
-- **Get all products**
-
-Retrieves a list of all products
-
-```
-GET /api/products
-```
-
-- **Get a product**
-
-Retrieves a product
-
-```
-GET /api/product/:id
-```
-
-- **Update a product**
-
-Upadate a product
-
-```
-PUT /api/product/:id
-```
-
-- **Delete a product**
-
-Delete a product
-
-```
-DELETE /api/product/:id
-```
+| Endpoint            | Description                                                      | Method |
+|---------------------|------------------------------------------------------------------|--------|
+| /api/product        | Creates a new product for user managed by the admin.             | POST   |
+| /api/products       | Retrieves a list of all products.                                | GET    |
+| /api/product/:id    | Retrieves a product.                                             | GET    |
+| /api/product/:id    | Update a product.                                                | PUT    |
+| /api/product/:id    | Delete a product.                                                | DELETE |
 
 ##### Category
 
-- **Create a category(s)**
+| Endpoint            | Description                                                      | Method |
+|---------------------|------------------------------------------------------------------|--------|
+| /api/category       | Creates a category for product.                                  | POST   |
+| /api/categories     | Retrieves a list of all categories.                              | GET    |
+| /api/category/:id   | Retrieves a category.                                            | GET    |
+| /api/category/:id   | Update a category.                                               | PUT    |
+| /api/category/:id   | Delete a category.                                               | DELETE |
 
-Creates a category for product
-
-```
-POST /api/category
-```
-
-- **Get all categories**
-
-Retrieves a list of all categories
-
-```
-GET /api/categories
-```
-
-- **Get a category**
-
-Retrieves a category
-
-```
-GET /api/category/:id
-```
-
-- **Update a category**
-
-Upadate a category
-
-```
-PUT /api/category/:id
-```
-
-- **Delete a category**
-
-Delete a category
-
-```
-DELETE /api/category/:id
-```
 
 #### Shopping cart
 
-This feature manage the items present in the cart referencing the product and the usee whose items are present.
+| Endpoint            | Description                                                      | Method |
+|---------------------|------------------------------------------------------------------|--------|
+| /api/add            | Create an item in the cart. This initiates the cart with items created by the user. | POST   |
+| /api/remove         | Remove an item in the cart. This initiates the removal of an item in the cart. | DELETE |
+| /api/carts          | View cart. This shows all items present in the cart.             | GET    |
+| /api/clear          | Clear cart. This clears all items present in the cart.           | DELETE |
+| /api/update         | Update the cart. This updates the items present in the cart.     | PUT    |
 
-- **Create an item the cart**
 
-This initiate the cart with items created by the user
 
-```
-POST /api/add
-```
-
-- **Remove an item in the cart**
-
-This intiate the removal of an item in the cart
-
-```
-DELETE /api/remove
-```
-
-- **View cart**
-  This shows all items present in the cart
-
-```
-GET /api/carts
-```
-
-- **Clear cart**
-  This clears all items present in the cart
-
-```
-DELETE /api/clear
-```
-
-- **Update the cart**
-  This update the items present in the cart
-
-```
-PUT /api/update
-```
 
 #### Admin spcific actions
 
@@ -183,45 +76,38 @@ listings, view orders, and update order statuses.
 
 ##### Product Management
 
-- **Create a product**
-- **Get all products**
-- **Get a product**
-- **Update a product**
-- **Delete a product**
+
+
+| Endpoint            | Description                                                      | Method |
+|---------------------|------------------------------------------------------------------|--------|
+| /api/product        | Creates a new product for user managed by the admin.             | POST   |
+| /api/products       | Retrieves a list of all products.                                | GET    |
+| /api/product/:id    | Retrieves a product.                                             | GET    |
+| /api/product/:id    | Update a product.                                                | PUT    |
+| /api/product/:id    | Delete a product.                                                | DELETE |
+
 
 ##### Category Management
 
-- **Create a category**
-- **Get all categories**
-- **Get a category**
-- **Update a category**
-- **Delete a category**
+
+##### Category
+
+| Endpoint            | Description                                                      | Method |
+|---------------------|------------------------------------------------------------------|--------|
+| /api/category       | Creates a category for product.                                  | POST   |
+| /api/categories     | Retrieves a list of all categories.                              | GET    |
+| /api/category/:id   | Retrieves a category.                                            | GET    |
+| /api/category/:id   | Update a category.                                               | PUT    |
+| /api/category/:id   | Delete a category.                                               | DELETE |
 
 ##### Order Management
 
-- **Get all orders**
+| Endpoint            | Description                                                      | Method |
+|---------------------|------------------------------------------------------------------|--------|                                 
+| /api/orders               | Retrieves a list of all orders.                                  | GET    |
+| /api/order/:id/status     | Updates the status of an order.                                  | PUT    |
+| /api/order/:id            | Deletes an order.                                                | DELETE |
 
-Retrieves a list of all orders.
-
-```
-GET /api/orders
-```
-
-- **Update order status**
-
-Updates the status of an order.
-
-```
-PUT /api/order/:id/status
-```
-
-- **Delete an order**
-
-Deletes an order.
-
-```
-DELETE /api/order/:id
-```
 
 ## 🔧 Tech Stack
 
